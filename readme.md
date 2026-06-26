@@ -56,6 +56,12 @@ We follow the **Librarian Protocol** which enforces:
 ### Writing Code
 All code edits should be surgical, preserving original code style and existing comments. Always add tests for new features.
 
+### Security Guidelines
+Always prioritize security:
+- **No Hardcoded Secrets**: Ensure no credentials, API keys, or private tokens are checked in.
+- **Input Validation**: Validate and sanitize all inputs before processing.
+- **Safe Execution**: Avoid unsafe operations (e.g., `eval`, dynamic SQL execution).
+
 ## Testing
 
 To run the automated tests within this workspace, run:
@@ -63,6 +69,9 @@ To run the automated tests within this workspace, run:
 ```bash
 # Execute Go test suite
 go test ./...
+
+# Run tests with verbose output
+go test -v ./...
 ```
 
 ## License
