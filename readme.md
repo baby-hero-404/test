@@ -1,6 +1,6 @@
-# Prompt Base - Test Repository
+# Prompt Base - Test Repository (Go Algorithm Implementation)
 
-This repository contains test components, configurations, and specs managed by the Prompt Base AI Orchestrator. It follows the **Librarian Protocol** for autonomous, highly structured development workflows.
+This repository contains a flat, minimalist Go project structure focused on algorithmic implementation, managed by the Prompt Base AI Orchestrator. It follows the **Librarian Protocol** for autonomous, highly structured development workflows.
 
 ## Table of Contents
 - [Overview](#overview)
@@ -12,7 +12,7 @@ This repository contains test components, configurations, and specs managed by t
 
 ## Overview
 
-This project is a standardized workspace designed to run and verify code generation tasks, automated planning, and system-level refactoring. It serves as a sandbox/target environment for prompt-driven software agents.
+This project is a standardized workspace designed to run and verify code generation tasks, automated planning, and system-level refactoring, specifically tailored for Go-based algorithmic implementations. The architecture centers around a root-level solution package with auxiliary utility sub-packages.
 
 ## Project Structure
 
@@ -22,7 +22,11 @@ This project is a standardized workspace designed to run and verify code generat
 │   └── repos/
 │       └── test/
 │           └── main/
-│               └── readme.md       # Project documentation (this file)
+│               ├── solution.go     # Core algorithmic solution
+│               ├── solution_test.go # Solution unit tests
+│               ├── go.mod          # Go module specification
+│               ├── readme.md       # Project documentation (this file)
+│               └── numbers/        # Auxiliary logic or helper functions for numeric processing
 ├── openspec/                       # Technical specifications and proposals
 └── task.json                       # Current agent task context and state
 ```
@@ -31,8 +35,7 @@ This project is a standardized workspace designed to run and verify code generat
 
 ### Prerequisites
 
-- Node.js (v22 or higher recommended)
-- Python (v3.12 or higher recommended)
+- Go (v1.18 or higher recommended)
 
 ### Setup
 
@@ -40,7 +43,7 @@ Clone the repository and inspect the tasks:
 
 ```bash
 git clone <repository-url>
-cd <repository-directory>
+cd code/repos/test/main
 ```
 
 ## Development Workflow
@@ -53,15 +56,22 @@ We follow the **Librarian Protocol** which enforces:
 ### Writing Code
 All code edits should be surgical, preserving original code style and existing comments. Always add tests for new features.
 
+### Security Guidelines
+Always prioritize security:
+- **No Hardcoded Secrets**: Ensure no credentials, API keys, or private tokens are checked in.
+- **Input Validation**: Validate and sanitize all inputs before processing.
+- **Safe Execution**: Avoid unsafe operations (e.g., `eval`, dynamic SQL execution).
+
 ## Testing
 
 To run the automated tests within this workspace, run:
 
 ```bash
-# Execute test suite
-npm run test
-# or
-python -m pytest
+# Execute Go test suite
+go test ./...
+
+# Run tests with verbose output
+go test -v ./...
 ```
 
 ## License
