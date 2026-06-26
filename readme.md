@@ -2,6 +2,8 @@
 
 This repository contains a flat, minimalist Go project structure focused on algorithmic implementation, managed by the Prompt Base AI Orchestrator. It follows the **Librarian Protocol** for autonomous, highly structured development workflows.
 
+This setup ensures optimal performance, strict input validation, and clean Go design principles.
+
 ## Table of Contents
 - [Overview](#overview)
 - [Project Structure](#project-structure)
@@ -35,7 +37,7 @@ This project is a standardized workspace designed to run and verify code generat
 
 ### Prerequisites
 
-- Go (v1.18 or higher recommended)
+- **Go**: Version 1.18 or higher (v1.22+ recommended for advanced performance features)
 
 ### Setup
 
@@ -44,6 +46,13 @@ Clone the repository and inspect the tasks:
 ```bash
 git clone <repository-url>
 cd code/repos/test/main
+```
+
+Download dependencies (if any):
+
+```bash
+go mod download
+go mod tidy
 ```
 
 ## Development Workflow
@@ -72,6 +81,9 @@ go test ./...
 
 # Run tests with verbose output
 go test -v ./...
+
+# Run tests with coverage reporting
+go test -cover ./...
 ```
 
 ## License

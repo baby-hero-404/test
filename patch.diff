@@ -1,0 +1,45 @@
+diff --git a/readme.md b/readme.md
+--- a/readme.md
++++ b/readme.md
+@@ -9,4 +9,5 @@ This setup ensures optimal performance, strict input validation, and clean Go de
+ - [Project Structure](#project-structure)
+ - [Getting Started](#getting-started)
+ - [Development Workflow](#development-workflow)
++- [Code Quality & Linting](#code-quality--linting)
+ - [Testing](#testing)
+@@ -72,19 +73,34 @@ Always prioritize security:
+ - **Safe Execution**: Avoid unsafe operations (e.g., `eval`, dynamic SQL execution).
+ 
++## Code Quality & Linting
++
++To maintain a clean and idiomatic Go codebase, follow these quality assurance steps:
++
++```bash
++# Format code according to official guidelines
++go fmt ./...
++
++# Run static analysis to find potential bugs
++go vet ./...
++
++# (Optional) Run golangci-lint if installed
++golangci-lint run
++```
++
+ ## Testing
+ 
+ To run the automated tests within this workspace, run:
+ 
+ ```bash
+ # Execute Go test suite
+ go test ./...
+-```
+ 
+ # Run tests with verbose output
+ go test -v ./...
+ 
+ # Run tests with coverage reporting
+ go test -cover ./...
++
++# Run benchmarks to verify algorithmic performance
++go test -bench=. -benchmem ./...
+ ```
