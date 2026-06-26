@@ -18,10 +18,17 @@ This project is a standardized workspace designed to run and verify code generat
 
 ```text
 .
-├── solution.go         # Core algorithmic solution
-├── solution_test.go    # Solution unit tests
-├── go.mod              # Go module specification
-└── readme.md           # Project documentation (this file)
+├── code/
+│   └── repos/
+│       └── test/
+│           └── main/
+│               ├── solution.go     # Core algorithmic solution
+│               ├── solution_test.go # Solution unit tests
+│               ├── go.mod          # Go module specification
+│               ├── readme.md       # Project documentation (this file)
+│               └── numbers/        # Auxiliary logic or helper functions for numeric processing
+├── openspec/                       # Technical specifications and proposals
+└── task.json                       # Current agent task context and state
 ```
 
 ## Getting Started
@@ -32,7 +39,7 @@ This project is a standardized workspace designed to run and verify code generat
 
 ### Setup
 
-Clone the repository and navigate to the project directory:
+Clone the repository and inspect the tasks:
 
 ```bash
 git clone <repository-url>
