@@ -19,15 +19,11 @@ This project provides a standardized workspace designed to run and verify code-g
 
 ```text
 .
-├── code/
-│   └── repos/
-│       └── test/
-│           └── main/
-│               ├── solution.go      # Core algorithmic solution
-│               ├── solution_test.go # Solution unit tests
-│               ├── go.mod           # Go module specification
-│               ├── readme.md        # Project documentation (this file)
-│               └── numbers/         # Auxiliary logic or helper functions for numeric processing
+├── solution.go      # Core algorithmic solution
+├── solution_test.go # Solution unit tests
+├── go.mod           # Go module specification
+├── readme.md        # Project documentation (this file)
+├── numbers/         # Auxiliary logic or helper functions for numeric processing
 ├── openspec/                        # Technical specifications and proposals
 └── task.json                        # Current agent task context and state
 ```
@@ -44,7 +40,7 @@ Clone the repository and inspect the tasks:
 
 ```bash
 git clone <repository-url>
-cd code/repos/test/main
+cd <repository-name>
 ```
 
 ## Development Workflow
