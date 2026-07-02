@@ -7,12 +7,14 @@ This repository contains a flat, minimalist Go project structure focused on algo
 - [Overview](#overview)
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
+- [Implementation Guide](#implementation-guide)
 - [Development Workflow](#development-workflow)
 - [Testing & Diagnostics](#testing--diagnostics)
   - [Running Tests](#running-tests)
   - [Benchmarking](#benchmarking)
   - [Code Coverage](#code-coverage)
   - [Race Detection](#race-detection)
+- [Best Practices](#best-practices)
 - [License](#license)
 
 ## Overview
@@ -43,6 +45,24 @@ Clone the repository and inspect the tasks:
 git clone <repository-url>
 cd test
 ```
+
+## Implementation Guide
+
+To implement your solution, use the following template structure in `solution.go`:
+
+```go
+package main
+
+// Solve processes the algorithmic input and returns the correct result.
+// Time Complexity: O(N)
+// Space Complexity: O(1)
+func Solve(input string) string {
+	// Implement logic here
+	return ""
+}
+```
+
+Ensure that any corresponding unit tests in `solution_test.go` cover edge cases (e.g., empty inputs, extreme boundaries, large inputs).
 
 ## Development Workflow
 
@@ -103,6 +123,13 @@ Ensure thread safety and prevent data races during concurrent execution:
 # Run tests with the data race detector enabled
 go test -race ./...
 ```
+
+## Best Practices
+
+- **Idiomatic Go**: Keep style consistent with standard library formatting. Always run `go fmt`.
+- **Zero External Dependencies**: Avoid using external libraries. Stick to standard library packages (`math`, `sort`, `strings`, `strconv`, etc.).
+- **Safety First**: Handle boundary conditions (integer overflow, division by zero, nil pointers) proactively.
+- **Allocation Efficiency**: Avoid unnecessary allocations within tight loops; reuse slices and buffers when possible.
 
 ## License
 
