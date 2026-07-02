@@ -8,11 +8,7 @@ This repository contains a flat, minimalist Go project structure focused on algo
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
 - [Development Workflow](#development-workflow)
-- [Testing & Diagnostics](#testing--diagnostics)
-  - [Running Tests](#running-tests)
-  - [Benchmarking](#benchmarking)
-  - [Code Coverage](#code-coverage)
-  - [Race Detection](#race-detection)
+- [Testing](#testing)
 - [License](#license)
 
 ## Overview
@@ -60,11 +56,9 @@ This repository is optimized for rapid prototyping and verification of Go algori
 - **Performance**: Optimize time and space complexity for algorithmic solutions.
 - **Clean Code**: Follow Go idioms, keeping logic simple, readable, and well-documented.
 
-## Testing & Diagnostics
+## Testing
 
-To run the automated tests and performance analysis tools within this workspace, use the following commands:
-
-### Running Tests
+To run the automated tests within this workspace, use the following commands:
 
 ```bash
 # Execute the Go test suite
@@ -72,36 +66,6 @@ go test ./...
 
 # Run tests with verbose output
 go test -v ./...
-```
-
-### Benchmarking
-
-Measure the execution time and memory allocations of your algorithmic solutions:
-
-```bash
-# Run all benchmarks
-go test -bench=. -benchmem ./...
-```
-
-### Code Coverage
-
-Generate and view detailed code coverage reports to ensure thorough test scenarios:
-
-```bash
-# Generate coverage profile
-go test -coverprofile=coverage.out ./...
-
-# View coverage details in your browser
-go tool cover -html=coverage.out
-```
-
-### Race Detection
-
-Ensure thread safety and prevent data races during concurrent execution:
-
-```bash
-# Run tests with the data race detector enabled
-go test -race ./...
 ```
 
 ## License
