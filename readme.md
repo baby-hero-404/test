@@ -1,6 +1,6 @@
-# Prompt Base - Test Repository (Go Algorithm Implementation)
+# Go Algorithm Implementation Test Repository
 
-This repository contains a flat, minimalist Go project structure focused on algorithmic implementation, managed by the Prompt Base AI Orchestrator. It adheres strictly to the **Librarian Protocol** for autonomous, highly structured development workflows.
+This repository contains a flat, minimalist Go project structure focused on algorithmic implementation. It provides a standardized workspace to implement, verify, and test Go-based algorithmic solutions.
 
 ## Table of Contents
 
@@ -42,22 +42,19 @@ cd test
 
 ## Development Workflow
 
-Development follows the **Librarian Protocol**, which enforces three primary phases:
-
-1. **Discovery**: Look up registered skills in `registry.min.json`.
-2. **Socratic Gate**: Engage in clarification rounds for ambiguous requirements.
-3. **Execution & Verification**: Implement surgical, targeted patches and run automated validations.
+This repository is optimized for rapid prototyping and verification of Go algorithmic solutions.
 
 ### Writing Code
 
-All code edits must be surgical, preserving the original code style and existing comments. Always ensure comprehensive unit tests are added for new features.
+- Keep core logic self-contained within `solution.go`.
+- Add comprehensive unit tests in `solution_test.go` covering edge cases.
+- Maintain consistent Go styling by running `go fmt` before submitting changes.
 
-### Security Guidelines
+### Code Quality Guidelines
 
-Security is a primary concern. Ensure your contributions follow these principles:
-- **No Hardcoded Secrets**: Do not check in credentials, API keys, or private tokens.
-- **Input Validation**: Validate and sanitize all external inputs before processing.
-- **Safe Execution**: Avoid unsafe operations (e.g., `eval`, dynamic SQL execution).
+- **Input Validation**: Validate and sanitize inputs in solution entries.
+- **Performance**: Optimize time and space complexity for algorithmic solutions.
+- **Clean Code**: Follow Go idioms, keeping logic simple, readable, and well-documented.
 
 ## Testing
 
