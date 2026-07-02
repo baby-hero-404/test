@@ -7,8 +7,14 @@ This repository contains a flat, minimalist Go project structure focused on algo
 - [Overview](#overview)
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
+- [Implementation Guide](#implementation-guide)
 - [Development Workflow](#development-workflow)
-- [Testing](#testing)
+- [Testing & Diagnostics](#testing--diagnostics)
+  - [Running Tests](#running-tests)
+  - [Benchmarking](#benchmarking)
+  - [Code Coverage](#code-coverage)
+  - [Race Detection](#race-detection)
+- [Best Practices](#best-practices)
 - [License](#license)
 
 ## Overview
@@ -40,6 +46,24 @@ git clone <repository-url>
 cd test
 ```
 
+## Implementation Guide
+
+To implement your solution, use the following template structure in `solution.go`:
+
+```go
+package main
+
+// Solve processes the algorithmic input and returns the correct result.
+// Time Complexity: O(N)
+// Space Complexity: O(1)
+func Solve(input string) string {
+	// Implement logic here
+	return ""
+}
+```
+
+Ensure that any corresponding unit tests in `solution_test.go` cover edge cases (e.g., empty inputs, extreme boundaries, large inputs).
+
 ## Development Workflow
 
 This repository is optimized for rapid prototyping and verification of Go algorithmic solutions.
@@ -56,9 +80,11 @@ This repository is optimized for rapid prototyping and verification of Go algori
 - **Performance**: Optimize time and space complexity for algorithmic solutions.
 - **Clean Code**: Follow Go idioms, keeping logic simple, readable, and well-documented.
 
-## Testing
+## Testing & Diagnostics
 
-To run the automated tests within this workspace, use the following commands:
+To run the automated tests and performance analysis tools within this workspace, use the following commands:
+
+### Running Tests
 
 ```bash
 # Execute the Go test suite
@@ -67,6 +93,43 @@ go test ./...
 # Run tests with verbose output
 go test -v ./...
 ```
+
+### Benchmarking
+
+Measure the execution time and memory allocations of your algorithmic solutions:
+
+```bash
+# Run all benchmarks
+go test -bench=. -benchmem ./...
+```
+
+### Code Coverage
+
+Generate and view detailed code coverage reports to ensure thorough test scenarios:
+
+```bash
+# Generate coverage profile
+go test -coverprofile=coverage.out ./...
+
+# View coverage details in your browser
+go tool cover -html=coverage.out
+```
+
+### Race Detection
+
+Ensure thread safety and prevent data races during concurrent execution:
+
+```bash
+# Run tests with the data race detector enabled
+go test -race ./...
+```
+
+## Best Practices
+
+- **Idiomatic Go**: Keep style consistent with standard library formatting. Always run `go fmt`.
+- **Zero External Dependencies**: Avoid using external libraries. Stick to standard library packages (`math`, `sort`, `strings`, `strconv`, etc.).
+- **Safety First**: Handle boundary conditions (integer overflow, division by zero, nil pointers) proactively.
+- **Allocation Efficiency**: Avoid unnecessary allocations within tight loops; reuse slices and buffers when possible.
 
 ## License
 
